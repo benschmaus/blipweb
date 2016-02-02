@@ -1,0 +1,89 @@
+body {
+	font-family: sans-serif;
+}
+
+h1 {
+	font-size: 1.2em;
+}
+
+#controlBar {
+	font-size: 1em;
+	padding: 4px;
+	
+}
+
+.foo {
+	font-size: 1.5em;
+}
+
+.foo {
+	color: #ff0000;
+}
+
+#container {
+	border: 0px solid #000;
+	margin-top: 25px;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#envelope {
+	float: left;
+}
+
+#filter {
+
+}
+
+#oscillators {
+	float: left;
+}
+
+#lfo {
+
+}
+
+#shareUrl {
+	font-size: .7em;
+}
+
+.ui-dialog-titlebar {
+	font-size: .7em !important;
+}
+
+
+input.controlButton {
+	font-size: .7em;
+	font-weight: bold;
+}
+
+.ui-button-text {
+	font-size: .7em;
+}
+
+.knobGroup {
+	border: 0px solid #000;
+	margin-right: 5%;
+}
+
+.knobGroup h3 {
+	font-size: .9em;
+}
+
+.knobLabelPair {
+	width: 105px;
+	float: left;
+}
+
+.knobGroup h2 {
+	padding: 3px;
+	background: #000;
+	color: #eee;
+	font-size: 1em;
+}
+
+.clear {
+	clear: both;
+}
+
