@@ -23,7 +23,9 @@
 
   <div id="container">
   
-  <p><b>blipweb [alpha]</b>: patch editing and sharing for meeblip anode</p>
+  <p><b>blipweb [alpha]</b>: patch editing and sharing for meeblip anode
+
+  [<b>examples</b>: <a href="/blipweb/?aDecay=43&fDecay=25&sustain=0&fCut=64&wave=52&detune=64&octave=0&lDepth=122&lRate=120&lDest=0">perc<a> - <a href="/blipweb/?aDecay=45&fDecay=97&sustain=127&fCut=19&wave=13&detune=63&octave=0&lDepth=108&lRate=12&lDest=127">grit</a> -]</p>
 
   <form id="editor" name="editor">
   
@@ -161,6 +163,14 @@
         $("#octave").buttonset();
         $("#lDest").buttonset();
         
+        $("editor").keypress(
+          function(e) {
+            if (e.which == 13) {
+              $("#send").click();
+              return false;
+            }
+          }
+        );
 
         $("#send").button().click(
           function(event) {
