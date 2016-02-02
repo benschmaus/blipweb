@@ -11,6 +11,10 @@ To save your patch click "get patch link".  You can save the link to a bookmarks
 or put it in a web page.  In this way you can create shareable libraries of patches for
 your MeeBlip.
 
+Patches can also serve as a reference guide for creating sounds on your MeeBlip.  For example,
+if you load a patch link you can position the tactile knobs and switches on your MeeBlip to
+mirror those in the patch config to dial in the sound of a patch config on your synth.
+
 Note that the resonance control is not supported as it's analog only.
 
 There are also a few MIDI only parameters that I have not implemented yet.
