@@ -1,6 +1,8 @@
 Blipweb is a simple web app for creating and sharing patches for MeeBlip anode
 using the Web MIDI API, which is currently only supported by Chrome.
 
+You can see a video of it in action at https://www.youtube.com/watch?v=ToHkEqEFFlI
+
 To create patches, select the a) MIDI port your MeeBlip is connected to and
 b) MIDI channel your MeeBlip is configured to use.
 
@@ -20,6 +22,6 @@ Note that the resonance control is not supported as it's analog only.
 There are also a few MIDI only parameters that I have not implemented yet.
 
 Nonetheless, this version has been tested on my local system and works well.  You can try out the
-latest stable version at http://factotumo.com/blipweb/.
+latest stable version at https://factotumo.com/blipweb/.
 
 Feedback welcome.
