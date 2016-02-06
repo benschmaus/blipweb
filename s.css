@@ -72,7 +72,17 @@ input.controlButton {
 }
 
 .knobLabelPair {
+	width: 110px;
+	float: left;
+}
+
+.knobLabelPairStacked {
 	width: 105px;
+}
+
+.knobLabelPairWide {
+	border: 0px solid #000;
+	width: 120px;
 	float: left;
 }
 

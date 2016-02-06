@@ -6,17 +6,17 @@ var formToCCs = {
     "wave": 51,
     "detune": 50,
     "octave": 65,
-    "lDepth": 49,
-    "lRate": 48,
-    "lDest": 67
+    "lDepth": 48,
+    "lRate": 49,
+    "lDest": 67,
+    "pwmSweep": 66,
+    "glide": 55,
+    "vcfEnvAmount": 56,
+    "lRand": 68,
+    "lNoteRetrig": 69,
+    "oscBWave": 70
 };
 
-function updateSelect(options) {
-    $("#port").empty();
-    for (var i = 0; i < options.length; i++) {
-        $("#port").append("<option>" + options[i] + "</option>");
-    }
-}
 
 var midi = {
 
