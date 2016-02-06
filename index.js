@@ -124,7 +124,7 @@ onPortStateChange: function(event) {
 },
 
 onMIDIMessage: function(message) {
-    console.log(message);
+    //console.log(message);
 }
 
 };
