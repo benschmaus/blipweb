@@ -25,7 +25,6 @@
 
   ga('create', 'UA-53688025-2', 'auto');
   ga('send', 'pageview');
-
 </script>
 
 </head>
@@ -34,9 +33,11 @@
 
   <div id="container">
   
-  <p><b>blipweb [beta]</b>: patch editing and sharing for meeblip anode.
+  <p><b>blipweb [v0.3 beta]</b>: patch editing and sharing for meeblip anode.
 
-  <b>examples</b>: <a href="./?aDecay=61&fDecay=53&sustain=0&fCut=64&wave=52&detune=64&octave=0&pwmSweep=0&lRate=120&lDepth=122&lDest=0&glide=0&vcfEnvAmount=99&lRand=0&lNoteRetrig=127&oscBWave=0">perc<a> - <a href="./?aDecay=45&fDecay=97&sustain=127&fCut=49&wave=108&detune=63&octave=0&pwmSweep=127&lRate=28&lDepth=108&lDest=127&glide=0&vcfEnvAmount=100&lRand=0&lNoteRetrig=127&oscBWave=0">fuzz buzz</a> - <a href="./?aDecay=100&fDecay=101&sustain=127&fCut=89&wave=9&detune=69&octave=0&pwmSweep=0&lRate=58&lDepth=16&lDest=127&glide=30&vcfEnvAmount=64&lRand=0&lNoteRetrig=127&oscBWave=0">fat lead</a></p>
+  <b>examples</b>: <a href="./?aDecay=61&fDecay=53&sustain=0&fCut=64&wave=48&detune=64&octave=0&pwmSweep=0&lRate=120&lDepth=122&lDest=0&glide=0&vcfEnvAmount=99&lRand=0&lNoteRetrig=127&oscBWave=0">perc<a> -
+  <a href="./?aDecay=88&fDecay=68&sustain=127&fCut=77&wave=96&detune=63&octave=0&pwmSweep=127&lRate=28&lDepth=108&lDest=127&glide=0&vcfEnvAmount=127&lRand=0&lNoteRetrig=127&oscBWave=0">buzz</a> -
+  <a href="./?aDecay=100&fDecay=101&sustain=127&fCut=89&wave=0&detune=69&octave=0&pwmSweep=0&lRate=58&lDepth=16&lDest=127&glide=30&vcfEnvAmount=64&lRand=0&lNoteRetrig=127&oscBWave=0">phlead</a></p>
 
 
   <form id="editor" name="editor">
@@ -102,13 +103,43 @@
     <div class="knobLabelPair">
       
       <h3>wave</h3>
-      <input name="wave" type="text" class="dial" value="64" />
+      <input name="wave" type="text" value="64" />
       
+      <table id="waveBanks">
+        <tbody id="waveBanksBody">
+        <tr>
+          <td><b>range</b></td>
+          <td><b>bank a</b></td>
+          <td><b>bank b</b></td>
+        </tr>
+        </tbody>
+      </table>
+      <script id="waveBanksTmpl" type="text/x-jsrender">
+        <tr>
+          <td>{{:range}}</td>
+          <td>{{:bankA}}</td>
+          <td>{{:bankB}}</td>
+        </tr>
+      </script>
+      <script type="text/javascript">
+        var waves = 
+          [{"range": "0-15", "bankA": "pwm pulse", "bankB": "bit 1"},
+          {"range": "16-31", "bankA": "pulse", "bankB": "bit 2"},
+          {"range": "32-47", "bankA": "saw", "bankB": "bit 3"},
+          {"range": "48-63", "bankA": "fm 1 ", "bankB": "dist 2"},
+          {"range": "64-79", "bankA": "dist 1", "bankB": "dist 3"},
+          {"range": "80-95", "bankA": "gran 1", "bankB": "fm 2"},
+          {"range": "96-111", "bankA": "voice 1", "bankB": "fm 3"},
+          {"range": "112-127", "bankA": "voice 2", "bankB": "+ gran"}];
+        var html = $.templates("#waveBanksTmpl").render(waves);
+        $("#waveBanksBody").append(html);
+      </script>
+
     </div>
 
     <div class="knobLabelPair">
       <h3>detune</h3>
-      <input name="detune" type="text" class="dial" value="64"/>
+      <input name="detune" type="text" class="dial" value="64" />
     </div>
 
     <div style="float:left">
@@ -155,7 +186,7 @@
 
     <div class="knobLabelPair">
       <h3>glide</h3>
-      <input name="glide" type="text" class="dial" value="64" />
+      <input name="glide" type="text" class="dial" value="0" />
     </div>
 
     <div class="knobLabelPair">
@@ -219,6 +250,28 @@
               'fgColor': '#222222'
           }
         );
+        $("input[name='wave']").knob(
+          {
+              'min':0,
+              'max':127,
+              'step': 16,
+              'width': '70',
+              'height': '100',
+              'cursor': false,
+              'thickness': .3,
+              'angleOffset': -150,
+              'angleArc': 300,
+              'fgColor': '#222222',
+              'format': function(v) {
+                if (v > 127) {
+                  return 127;
+                } else {
+                  return v;
+                }
+              }
+          }
+        );
+
         $("#sustain").buttonset();
         $("#octave").buttonset();
         $("#lDest").buttonset();

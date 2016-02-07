@@ -40,6 +40,22 @@ h1 {
 	float: left;
 }
 
+#waveBanks {
+	position: relative;
+	font-size: .7em;
+	border: 1px solid #333;
+	width: 150px;
+	text-align: center;
+	top: -20px;
+	left: 10px;
+}
+
+#waveBanks tr {
+}
+
+#waveBanks td {
+}
+
 #lfo {
 
 }
@@ -95,5 +111,6 @@ input.controlButton {
 
 .clear {
 	clear: both;
+	height: 1px;
 }
 
