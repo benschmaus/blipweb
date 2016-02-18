@@ -9,15 +9,17 @@ b) MIDI channel your MeeBlip is configured to use. Change the knobs and switches
 To save your patch click "get patch link".  You can save the link to a bookmarks folder, put it in a web page, etc.
 In this way you can create shareable libraries of patches for your MeeBlip.
 
-Patches can also serve as a reference guide for creating sounds on your MeeBlip.  For example,
+There is a soundcloud group where you can share your patches.  Find it at https://soundcloud.com/groups/meeblip-patches.
+
+blipweb Patches can also serve as a reference guide for creating sounds on your MeeBlip.  For example,
 if you load a patch link in the app you can position the tactile knobs and switches on your MeeBlip to
-mirror those in the patch config to dial in the sound on your synth.
+mirror those in the patch config to dial in the sound on your synth.  Note that you need to use blipweb to control MeeBlip's MIDI-only params!
 
-Note that the resonance control is not supported as it's analog only.
+Also, the resonance control is not supported as it's analog only.
 
-There are also a few MIDI only parameters that I have not implemented yet.
-
-Nonetheless, this version has been tested on my local system and works well.  You can try out the
+This version has been tested on my local system and works well.  You can try out the
 latest stable version at https://factotumo.com/blipweb/.
 
-Feedback welcome.
+Read more about blipweb at https://factotumo.com/2016/02/blipweb-web-midi-patch-editor-for-meeblip-anode/
+
+Feedback is welcome.
