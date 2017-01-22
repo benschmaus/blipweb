@@ -3,7 +3,12 @@ body {
 }
 
 h1 {
-	font-size: 1.2em;
+	font-size: 1.5em;
+}
+
+.vt323 {
+	font-family: 'VT323', monospace;
+	font-size: 40px;
 }
 
 #controlBar {
